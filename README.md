@@ -1,50 +1,99 @@
-# Welcome to your Expo app 👋
+# DineBook 🍽️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+DineBook is a **restaurant slot booking app** built with **React Native (Expo)**. It allows users to explore multiple restaurants, view available time slots, and book reservations seamlessly. The app uses **Firebase Firestore** for real-time database management and **Firebase Authentication** for secure login and signup.
 
-## Get started
+---
 
-1. Install dependencies
+## ✨ Features
+
+* 📍 **Browse Restaurants** – View a list of restaurants fetched from Firestore.
+* 🕒 **Slot Booking** – Choose from available time slots for each restaurant.
+* 🔐 **Secure Authentication** – User login & signup powered by Firebase Authentication.
+* 🔄 **Real-Time Updates** – Bookings and slot availability update instantly with Firestore.
+* 📱 **Cross-Platform** – Built using Expo, works on both Android and iOS.
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React Native (Expo) + JavaScript
+* **Backend/Database:** Firebase Firestore
+* **Authentication:** Firebase Authentication
+* **State Management:** React hooks & context
+* **Deployment:** Expo Go
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+* Node.js & npm/yarn installed
+* Expo CLI installed globally (`npm install -g expo-cli`)
+* Firebase project setup with Firestore & Authentication enabled
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/iamsam15/DineBook.git
+   ```
+
+2. Install dependencies:
 
    ```bash
    npm install
+   # or
+   yarn install
    ```
 
-2. Start the app
+3. Setup Firebase:
+
+   * Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
+   * Enable **Firestore Database** and **Authentication (Email/Password)**
+   * Copy your Firebase config into a `firebase.js` file:
+
+     ```javascript
+     import { initializeApp } from "firebase/app";
+     import { getFirestore } from "firebase/firestore";
+     import { getAuth } from "firebase/auth";
+
+     const firebaseConfig = {
+       apiKey: "YOUR_API_KEY",
+       authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+       projectId: "YOUR_PROJECT_ID",
+       storageBucket: "YOUR_PROJECT_ID.appspot.com",
+       messagingSenderId: "SENDER_ID",
+       appId: "APP_ID",
+     };
+
+     const app = initializeApp(firebaseConfig);
+     export const db = getFirestore(app);
+     export const auth = getAuth(app);
+     ```
+
+4. Run the app:
 
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+5. Scan the QR code with **Expo Go** app on your device.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 📌 Future Improvements
 
-## Get a fresh project
+* ✅ Payment integration for reservations
+* ✅ Push notifications for booking reminders
+* ✅ Admin panel for restaurants to manage slots
+* ✅ UI/UX enhancements
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
-```
+## 🤝 Contributing
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Contributions, issues, and feature requests are welcome! Feel free to open a PR or issue.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
